@@ -1,0 +1,58 @@
+from turtle import Turtle, Screen
+
+turtle = Turtle()
+screen = Screen()
+def triangle(size, lastC):
+    turtle.begin_fill()
+    turtle.pensize(size)     
+    turtle.color("blue")     
+    turtle.forward(200)
+    turtle.left(120)            
+    turtle.color("red")     
+    turtle.forward(200)   
+    turtle.left(120)    
+    turtle.color(lastC)     
+    turtle.forward(200)  
+    turtle.end_fill()
+
+def mobileCircle(color):
+    turtle.penup()
+    turtle.forward(10)
+    turtle.right(25)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.circle(50)
+
+triangle(2, 'green')
+triangle(6, 'orange')
+triangle(4, 'purple')
+mobileCircle('blue')
+mobileCircle('red')
+mobileCircle('green')
+mobileCircle('pink')
+mobileCircle('yellow')
+mobileCircle('orange')
+mobileCircle('gray')
+mobileCircle('purple')
+mobileCircle('blue')
+mobileCircle('red')
+mobileCircle('green')
+mobileCircle('pink')
+mobileCircle('yellow')
+mobileCircle('orange')
+
+
+screen.mainloop()     
+
+
+# turtle.goto(150, 300)   
+# turtle.left(50)        
+# turtle.backward(50)     
+# turtle.ycor()           
+# turtle.xcor()          
+# turtle.stamp()        
+# turtle.setheading(180)  
+# turtle.penup()         
+# turtle.pendown()       
+# turtle.pensize(4)     
+# turtle.shape("circle")  
