@@ -1,14 +1,27 @@
-from flask import Flask 
+from flask import Flask, jsonify 
 
 app=Flask(__name__)
 
-@app.route('/')
+airlines = [
+    {
+        "id": 1,
+        "name": 'United'
+    },
+    {   "id":  2, 
+        "name": 'Spirit'
+    },
+    {
+        "id": 3,
+        "name": "Frontier"
+    }
+]
+
+@app.route('/airlines')
 def hi():
-    return "Hello World"
+    return jsonify(airlines)
 
-@app.route('/second-route')
-def second():
-    return "Second Function"
-
-print(hi())
-print(second()) 
+@app.route('/airlines/<id>')
+def second(id):
+    for airline in airlines:
+        if airline['id'] == int(id):
+            return jsonify(airline)
